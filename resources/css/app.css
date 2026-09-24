@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.welcome-box {
+  display: flex;
+  margin: auto;
+  margin-top: 30vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 25rem;
+  height: 25vh;
+  border: 0.25rem solid #bcbebf;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #1f2937;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+  .primary-button:hover,
+  .primary-button:focus {
+    background-color: #374151;
+  }
+
+  .primary-button:active {
+    background-color: #111827;
+  }
+
+  .primary-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px rgba(99, 102, 241, 0.5);
+  }
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.40rem 1rem;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: gray;
+  letter-spacing: 0.05em;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+  .secondary-button:hover {
+      background-color: #f3f3f3;
+      border-color: #999;
+      color: black;
+  }
+
+  .secondary-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.5);
+  }
+
+  .secondary-button:active {
+      background-color: #e0e0e0;
+      border-color: #777;
+  }
