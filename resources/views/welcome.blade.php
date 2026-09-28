@@ -17,16 +17,24 @@
             </style>
         @endif
     </head>
-    <body style="background-color: #f5f5f5">
+    <body class="dark:bg-gray-900">
         <header>
         </header>
         <main>
             <div class="welcome-box">
-                <h2>Welcome to MTG Card Tracker</h2>
-                <p>The place for tracking Magic The Gathering cards!</p>
+                <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Welcome to MTG Card Tracker</h2>
+                <p class="p-2 text-gray-100">The place for tracking Magic The Gathering cards!</p>
                 <nav style="padding-top: 2rem">
-                    <a class="secondary-button" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    <a class="primary-button" style="margin-left: 2rem" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a href="{{ route('register') }}">
+                        <x-secondary-button class="ms-3">
+                            {{ __('Register') }}
+                        </x-secondary-button>
+                    </a>
+                    <a style="margin-left: 2rem" href="{{ route('login') }}">
+                        <x-primary-button class="ms-3">
+                            {{ __('Log in') }}
+                        </x-primary-button>
+                    </a>
                 </nav>
             </div>
         </main>

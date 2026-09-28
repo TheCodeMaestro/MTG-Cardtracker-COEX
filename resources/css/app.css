@@ -11,12 +11,12 @@
   flex-direction: column;
   max-width: 25rem;
   height: 25vh;
-  border: 0.25rem solid #bcbebf;
+  /* border: 0.25rem solid #bcbebf; */
   border-radius: 0.5rem;
-  background-color: white;
+  background-color: #1f2937;
 }
 
-.primary-button {
+/* .primary-button {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -43,9 +43,9 @@
   .primary-button:focus {
     outline: none;
     box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px rgba(99, 102, 241, 0.5);
-  }
+  } */
 
-.secondary-button {
+/* .secondary-button {
   display: inline-flex;
   align-items: center;
   padding: 0.40rem 1rem;
@@ -74,4 +74,4 @@
   .secondary-button:active {
       background-color: #e0e0e0;
       border-color: #777;
-  }
+  } */
