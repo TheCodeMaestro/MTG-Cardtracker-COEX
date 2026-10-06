@@ -14,8 +14,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [CardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::get('/cards', [CardController::class, 'index']);
-
 Route::get('/trackedcards', function () {
     return view('trackedcards');
 })->middleware(['auth', 'verified'])->name('trackedcards');

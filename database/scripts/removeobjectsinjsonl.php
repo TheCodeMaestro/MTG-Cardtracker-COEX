@@ -21,12 +21,11 @@ $keptCards = 0;
 
 $allowedSets = ['dtk', 'frf', 'ktk'];
 $allowedDataFields = [
-    'id', 'object', 'layout', 'oracle_id', 'cmc', 'color_identity',
-    'colors', 'loyalty', 'mana_cost', 'name', 'oracle_text', 'power',
-    'toughness', 'type_line', 'artist', 'flavor_text', 'released_at',
-    'set_name', 'set',
+    'id','oracle_id', 'cmc', 'color_identity',
+    'loyalty', 'name', 'oracle_text', 'power', 'toughness',
+    'type_line', 'artist', 'released_at', 'set_name',
     'prices' => ['usd', 'eur'],
-    'image_uris' => ['small', 'normal', 'png']
+    'image_uris' => ['normal']
     ];
 
 while (($line = fgets($input)) !== false) {
