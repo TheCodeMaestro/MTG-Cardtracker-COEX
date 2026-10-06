@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('cmc');
             $table->json('color_identity')->nullable(true);
             $table->string('type_line');
-            $table->string('oracle_text')->nullable(true);
+            $table->string('oracle_text', 2048)->nullable(true);
             $table->string('power')->nullable(true);
             $table->string('toughness')->nullable(true);
             $table->string('loyalty')->nullable(true);
