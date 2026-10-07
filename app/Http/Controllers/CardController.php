@@ -26,7 +26,18 @@ class CardController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->back()->with('success', 'Card tracked successfully!');
+        return redirect()->back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(TrackedCard $trackedCard)
+    {
+        if ($trackedCard->user_id === Auth::id()) {
+            $trackedCard->delete();
+        }
+        return redirect()->back();
     }
 
     // Show the tracked cards of the user
@@ -75,14 +86,6 @@ class CardController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Card $card)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Card $card)
     {
         //
     }

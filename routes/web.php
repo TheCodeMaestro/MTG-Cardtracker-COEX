@@ -22,6 +22,7 @@ Route::get('/trackedcards', [CardController::class, 'showTrackedCards'])->middle
 
 Route::middleware('auth')->group(function () {
     Route::post('/cards/{card}/track', [CardController::class, 'track'])->name('cards.track');
+    Route::delete('/trackedcards/{trackedCard}/untrack', [CardController::class, 'destroy'])->name('trackedcards.untrack');
 });
 
 Route::middleware('auth')->group(function () {
