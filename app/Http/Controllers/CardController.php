@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Card;
+use App\Models\TrackedCard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CardController extends Controller
 {
@@ -12,8 +14,29 @@ class CardController extends Controller
      */
     public function index()
     {
-        $cards = Card::all();
+        $cards = Card::limit(20)->get();
         return view('dashboard', ['cards' => $cards]);
+    }
+
+    // Track a card for the user
+    public function track(Card $card)
+    {
+        $trackedCard = TrackedCard::firstOrCreate([
+            'card_id' => $card->id,
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->back()->with('success', 'Card tracked successfully!');
+    }
+
+    // Show the tracked cards of the user
+    public function showTrackedCards()
+    {
+        $trackedCards = TrackedCard::with('card')->where('user_id', Auth::id())->get();
+
+        return view('trackedCards', [
+            'trackedCards' => $trackedCards,
+        ]);
     }
 
     /**

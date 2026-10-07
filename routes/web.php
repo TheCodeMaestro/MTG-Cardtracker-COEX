@@ -14,9 +14,15 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [CardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/trackedcards', function () {
-    return view('trackedcards');
-})->middleware(['auth', 'verified'])->name('trackedcards');
+// Route::get('/trackedcards', function () {
+//     return view('trackedcards');
+// })->middleware(['auth', 'verified'])->name('trackedcards');
+
+Route::get('/trackedcards', [CardController::class, 'showTrackedCards'])->middleware(['auth', 'verified'])->name('trackedcards');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/cards/{card}/track', [CardController::class, 'track'])->name('cards.track');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

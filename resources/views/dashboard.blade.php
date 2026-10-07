@@ -23,6 +23,14 @@
                                     <div class="mt-2 text-sm">
                                         <div>USD: ${{ $card->usd_price }} - EUR: €{{ $card->eur_price }}</div>
                                     </div>
+                                    <div class="mt-4">
+                                        <form action="{{ route('cards.track', $card) }}" method="POST">
+                                            @csrf
+                                            <x-primary-button class="ms-3">
+                                                {{ __('Track Card') }}
+                                            </x-primary-button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach

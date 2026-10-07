@@ -28,4 +28,12 @@ class Card extends Model
     protected $casts = [
         'color_identity' => 'array',
     ];
+
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    public function trackedCards()
+    {
+        return $this->hasMany(TrackedCard::class);
+    }
 }
